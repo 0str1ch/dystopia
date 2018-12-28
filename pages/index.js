@@ -6,18 +6,26 @@ import Clients from '../components/work/clients';
 
 const Work = () => (
   <Layout>
-    <Container>
-      <span className="vertical-text">System Monitor</span>
-      <div className="desktop">
-        <h1>Welcome to Ostrich Industries</h1>
+    <Container grid minHeight>
+      <div className="panel-left">
+        <Clients />
       </div>
-      <nav className="side-menu">
+      <nav className="panel-right">
         <ul>
           <li>Home</li>
           <li>Test</li>
           <li>Help</li>
         </ul>
       </nav>
+      <div className="scrolling">
+        <span className="vertical-text">
+          <q>
+            Just because I do a lot of thinking doesn’t mean I don’t like
+            parties and getting into trouble.
+          </q>{' '}
+          – Stephen Hawking
+        </span>
+      </div>
     </Container>
 
     <style jsx>
@@ -28,26 +36,51 @@ const Work = () => (
 
         .vertical-text {
           font-family: var(--monospace);
-          font-size: 0.8em;
+          font-size: var(--text-small);
           letter-spacing: 0.5em;
           color: var(--primary-text);
           writing-mode: vertical-lr;
           text-orientation: upright;
           text-transform: uppercase;
-          grid-row: 1 / 3;
-          grid-column: 1;
-          place-self: flex-start;
           justify-self: center;
-          padding-top: 3rem;
+          margin-top: 101.5vh;
+          display: inline;
+          animation: infinite-scroll 60s linear 0s infinite normal none running;
+          will-change: transform;
         }
 
-        .desktop {
+        div.scrolling {
+          margin: 0;
+          height: 100%;
+          width: 2rem;
+          display: flex;
+          place-content: center;
+          white-space: nowrap;
+          overflow: hidden;
+          border-left: 1px solid #fff;
+          position: absolute;
+          right: 0;
+          backface-visibility: hidden;
+        }
+
+        @keyframes infinite-scroll {
+          0% {
+            transform: translate(0, 0);
+          }
+          100% {
+            transform: translate(0, -200rem);
+          }
+        }
+
+        .panel-left {
+          grid-column: 1 / 2;
+          padding: 2rem 4rem;
+          display: flex;
+          place-items: center;
+        }
+
+        .panel-right {
           grid-column: 2 / 3;
-          padding: 2rem;
-        }
-
-        .side-menu {
-          grid-column: 3 / 4;
           grid-row: 1 / 3;
           border-left: 1px solid #fff;
         }

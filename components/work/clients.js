@@ -18,7 +18,7 @@ const Clients = () => (
           flex-direction: column;
           place-content: flex-end;
           width: 100%;
-          text-align: right;
+          text-align: inherit;
         }
       `}
     </style>

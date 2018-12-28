@@ -1,37 +1,18 @@
-export default ({
-  hero,
-  columnFull,
-  columnEven,
-  columnSidebar,
-  rowWide,
-  grid,
-  center,
-  vCenter,
-  dark,
-  gray,
-  wide,
-  small,
-  overflow,
-  minHeight,
-  dotBackground,
-  children,
-  mobileStyle,
-  ...props
-}) => (
+export default ({ grid, padding, small, minHeight, children, ...props }) => (
   <section className="grid-container" {...props}>
     <style jsx>
       {`
         section {
           width: 100%;
           margin: 0 auto;
-          padding: 0;
+          padding: ${padding ? '1rem' : ''};
           display: grid;
-          grid-template-columns: 2rem auto 8rem;
           grid-template-rows: auto 5rem;
-          height: 100vh;
-          max-height: 100vh;
-          max-width: 100%;
+          ${grid ? 'grid-template-columns: 1fr 1fr;' : 'grid: auto;'}
+          ${minHeight ? 'min-height: 100vh;' : ''}
+          ${small ? 'max-width: 700px;' : ''}
         }
+
 
         section ~ div {
           padding: 1rem;

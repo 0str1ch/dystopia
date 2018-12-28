@@ -18,6 +18,7 @@ export default withPure(({ title, description, children }) => (
         }
       />
     </Head>
+
     <div className="screen-render">{children}</div>
     <style jsx global>
       {`
@@ -33,36 +34,6 @@ export default withPure(({ title, description, children }) => (
           position: relative;
           overflow-scrolling: touch;
           background: var(--background-dark);
-        }
-
-        .screen:after {
-          content: '';
-          height: 1px;
-          width: 100%;
-          background: #fff;
-          bottom: 2rem;
-          z-index: 10;
-          position: absolute;
-        }
-
-        .screen:before {
-          content: '';
-          height: 1px;
-          width: 100%;
-          background: #fff;
-          top: 2rem;
-          z-index: 10;
-          position: absolute;
-        }
-
-        .screen-render:before {
-          content: '';
-          height: 100%;
-          width: 1px;
-          background: #fff;
-          left: 2rem;
-          z-index: 10;
-          position: absolute;
         }
 
         .screen-render {
@@ -167,12 +138,7 @@ export default withPure(({ title, description, children }) => (
 
         @media (min-width: 30em) {
           :root {
-            font-size: calc(1rem + ((1vw - 0.6em) * 0.5556));
-          }
-        }
-        @media (min-width: 120em) {
-          :root {
-            font-size: 1.2em;
+            font-size: calc(1rem + ((1.39vw - 0.6em) * 0.5556));
           }
         }
 
@@ -269,6 +235,20 @@ export default withPure(({ title, description, children }) => (
         code,
         pre {
           font-family: MaisonNeue-Mono, monospace;
+        }
+
+        /** Fix ugly qyotes "<insert witty quote here>" */
+        q,
+        blockquote {
+          quotes: '“' '”' '‘' '’';
+        }
+        q:before,
+        blockquote:before {
+          content: open-quote;
+        }
+        q:after,
+        blockquote:after {
+          content: close-quote;
         }
 
         code:before,
@@ -415,19 +395,6 @@ export default withPure(({ title, description, children }) => (
           padding: 1.25em 0;
           margin-bottom: 1.5em;
           width: 100%;
-        }
-
-        blockquote,
-        q {
-          quotes: none;
-        }
-
-        blockquote:after,
-        blockquote:before,
-        q:after,
-        q:before {
-          content: '';
-          content: none;
         }
 
         blockquote.left-pull {

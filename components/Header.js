@@ -1,8 +1,6 @@
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import ActiveLink from './ActiveLink';
-import MyLogo from './MyLogo';
-import NavMenuButton from './NavMenuButton';
 
 export default class Header extends PureComponent {
   constructor() {
@@ -22,6 +20,13 @@ export default class Header extends PureComponent {
     });
   }
 
+  hideNav() {
+    const menu = this.menu();
+    this.setState({
+      navShown: !menu.false,
+    });
+  }
+
   menu() {
     return this.state;
   }
@@ -32,36 +37,24 @@ export default class Header extends PureComponent {
       <>
         <header>
           <Link href="/">
-            <a className="logo">
-              <span>JS(OS)</span>
+            <a
+              className="logo"
+              onFocus={this.toggleNav}
+              role="presentation"
+              onMouseEnter={this.toggleNav}
+              onMouseLeave={this.toggleNav}
+              onClick={this.hideNav}
+            >
+              Jeremy Smith{' '}
+              <span className="not-my-name">
+                designs and develops interactive experiences
+              </span>
             </a>
           </Link>
-
-          <div className="header__right">
-            <div
-              role="button"
-              tabIndex={0}
-              className="header-toggle"
-              onClick={this.toggleNav}
-              onKeyPress={this.toggleNav}
-            >
-              <NavMenuButton />
-            </div>
-          </div>
         </header>
 
         <nav className="header__mobile-nav container">
-          <div
-            role="button"
-            tabIndex={0}
-            className="header__mobile-toggle"
-            onClick={this.toggleNav}
-            onKeyPress={this.toggleNav}
-          >
-            <NavMenuButton />
-          </div>
-          <ActiveLink href="/bigtext">Bigtext</ActiveLink>
-          <ActiveLink href="/typography">Typography</ActiveLink>
+          <ActiveLink href="/info">Info</ActiveLink>
           <ActiveLink href="/work">Work</ActiveLink>
           <ActiveLink href="/blog">Blog</ActiveLink>
         </nav>
@@ -70,12 +63,10 @@ export default class Header extends PureComponent {
           {`
             header {
               position: absolute;
-              height: 2rem;
               top: 0;
               background-color: transparent;
               width: 100%;
-              padding-left: 2rem;
-              padding-right: 2rem;
+              padding: 2rem;
               display: flex;
               justify-content: space-between;
               align-items: center;
@@ -97,9 +88,11 @@ export default class Header extends PureComponent {
               z-index: 1;
             }
 
-            a:active {
-              text-decoration: none;
+            a.logo:hover .not-my-name {
+              text-decoration: line-through var(--primary-hue);
+              color: var(--hint-light);
             }
+
             .header-toggle:focus,
             .header__mobile-toggle:focus,
             .nav-button:focus {
@@ -110,26 +103,20 @@ export default class Header extends PureComponent {
               display: block;
               position: relative;
               z-index: 100;
-              font-weight: 500;
+              width: 25rem;
+              font-weight: bold;
               font-style: normal;
-              text-shadow: var(--text-outline);
+              font-family: var(--monospace);
               font-stretch: normal;
-              font-size: var(--h3-medium);
-              color: var(--background-dark);
-              padding-left: 0.333rem;
+              font-size: var(--logo);
+              color: var(--primary-text);
               margin: 0;
-              text-transform: uppercase;
               text-decoration: none;
-              line-height: 2rem;
-              font-smoothing: antialiased;
-              -webkit-backface-visibility: hidden;
-              backface-visibility: hidden;
-              transform: translateZ(0);
             }
 
-            .logo span {
+            .logo span,
+            .logo a {
               margin: 0;
-              line-height: 5rem;
             }
             .header__right {
               display: flex;
@@ -166,8 +153,9 @@ export default class Header extends PureComponent {
 
             .header__mobile-nav {
               display: flex;
+              transform: translateX(${navShown ? '100%)' : '-100%'});
               opacity: ${navShown ? '1' : '0'};
-              width: 100%;
+              width: 50%;
               height: 100%;
               top: 0;
               right: 0;

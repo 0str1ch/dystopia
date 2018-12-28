@@ -11,11 +11,10 @@ const ClientList = props => (
             {`
               a {
                 font-family: var(--monospace);
-                font-size: var(--h2-large);
-                font-weight: 500;
+                font-size: var(--h3-medium);
+                font-weight: bold;
                 color: var(--primary-text);
                 text-decoration: none;
-                text-transform: lowercase;
                 padding: 0 0rem;
               }
               a:hover {
@@ -26,13 +25,6 @@ const ClientList = props => (
               a:hover {
                 text-decoration: none;
                 transition: color 150ms ease-in-out;
-              }
-
-              .strike-link {
-                display: flex;
-                font-size: 4rem;
-                color: #fff;
-                font-weight: bold;
               }
 
               a:active,
