@@ -1,5 +1,3 @@
-import Image from '../image';
-
 const ClientList = props => (
   <>
     <ul key="clientlist">
