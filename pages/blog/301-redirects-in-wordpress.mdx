@@ -1,0 +1,141 @@
+import withPost from '../../components/blog/with-post'
+import Image, {Video} from '../../components/image'
+
+export const meta = {
+  title: 'Easy 301 redirects in WordPress to save your SEO',
+  description: 'Keep your SEO ranking with 301 redirects in WordPress.',
+  date: '2018-11-09T12:05:55.907Z',
+  url: 'https://nextjs.org/blog/301-redirects-in-wordpress',
+  link: '/blog/301-redirects-in-wordpress',
+  authors: [{
+    name: 'Jeremy Smith',
+    avatar: '/static/da-band.jpg',
+    twitter: 'jeremy_made_it'
+  }]
+}
+
+export default withPost({...meta})
+
+### When moving your website to a dynamic web structure like WordPress, you're going to want to redirect the URLs from your old website to your new one so you don't lose the SEO ranking your old pages accrued over the years. This guide will show you how to do it (relatively) safely with a simple plugin and 301 redirects.
+
+Before we can begin adding 301 redirects, though, you'll need to be logged into your WordPress site's admin backend. Not sure where to log in to your WordPress website? Every WordPress website has the same login URL (unless you use a plugin to hide your login page). Try going to "yourdomainhere.com/wp-login.php" and be sure to swap out the "yourdomainhere.com" with your actual domain name.
+
+Enter your username and password, and now you're logged into the WordPress admin backend! Now, let's begin...
+
+Step 1: Install/Activate the Redirection plugin on your WordPress website.
+--------------------------------------------------------------------------
+
+*If you're comfortable installing WordPress plugins manually, you can [download the Redirection plugin here](https://wordpress.org/plugins/redirection/) for free and [skip to Step 2.](http://smithed.xyz/easy-301-redirects-wordpress/#step2)*
+
+Now that you're in the WordPress admin backend, find the menu bar on the right-hand side of your screen. You'll see a menu item called "Plugins". Click that menu item to be brought to your plugin management page.
+
+The search field will start searching as soon as you type, so make sure you type the entire name of the plugin to find the right one.
+
+In the search field found in the top-right corner of the Plugins page, type "Redirection" (without the quotation marks, of course). The window will then update automatically, and you should see the plugin "Redirection" in the list below.
+
+Click the "Install Now" button to begin installing the plugin automatically. Once the installation is finished, the button's text will change to "Activate". Click the button again to activate the plugin you just installed.
+
+Now you're (almost) ready to start adding 301 redirects! Let's continue...
+
+Step 2: Build a list of URLs that need to redirected (if you haven't already).
+------------------------------------------------------------------------------
+
+*If you only need to redirect a handful of old URLs, go ahead and skip to Step 3.*
+
+To redirect your old URLs to your new ones, you're going to need a list. This list will contain all of the original (read: old) URLs that you want to redirect, as well as the URLs those original URLs need to redirect to.
+
+**For example:**
+
+*Old URL:* yourdomainname.com/services.html
+
+*New URL:* yourdomainname.com/services
+
+<Image src={'https://assets.zeit.co/image/upload/front' + '/blog/next6/document-app-differences.png'} width={1830/3} height={356/3} />
+
+
+Remember, the links in your list MUST be in relative link format, i.e. "/services", "/services.html" (without the quotation marks). Your domain name cannot be in the URLs. Just the relative path to your page is all that's needed.
+
+Once you have a list of the old URLs and where they need to redirect to, make a two-column spreadsheet in Excel, Google Sheets, etc. No need to name any columns, just leave them as is. In Column A, you're going to copy the old URLs, and in Column B, you're going to copy where the old links are redirecting to.
+
+When your list is finished, and you are sure every link in your list is a relative link, export your spreadsheet as a .csv (comma-separated value) file. For Google Sheets, go to File > Download As and click "Comma-separated values (.csv, current sheet)".
+
+Save this file to your computer because in Step 3, we're going to upload it to the "Redirection" plugin to save a ton of time and copy/pasting!
+
+Step 3: Add the 301 redirects to the Redirection plugin
+-------------------------------------------------------
+
+Now, here's the easy part. Go back to your website's WordPress admin backend, and find the menu on the left-hand side of your screen again. Click the menu item called "Tools" and in the submenu that pops up when the page reloads, click "Redirection" to go to the plugin's settings page.
+
+*Don't see the Redirection plugin in the Tools menu? Make sure you remembered to activate the Redirection plugin!*
+
+Once on the plugin’s settings page, you’ll see a bunch of options and stuff that you can ignore for now. Find the menu items on the settings page named “Redirects” and “Import/Export”.
+
+If you only need to enter a few 301 redirects, click the “Redirects” menu item…
+Once the page reloads, you’ll see a blank list above and a place to enter data below. There are two fields on the page that you are going to edit: Source URL and Target URL. The Source URL is the old URL, and the Target URL is the new URL.
+
+Leave the regex box unchecked and change "Group" to "Redirections". Triple-check that the URLs are correct, and then click the "Add Redirect" button to save and publish the 301 redirect immediately. The page will refresh with a success message in the bottom right corner of your screen, and then you can continue to add your 301 redirects manually.
+
+As you add the redirects, you'll see the list above start to populate with each redirect you've saved. You can delete redirects in bulk if need be, or edit them if you made a mistake.
+
+### If you made a spreadsheet in Step 2, click the "Import/Export" menu item...
+
+Once the page has reloaded, you'll see an area where a file can be uploaded. Either drag and drop the file into the boxed area to select it, or click the "Add File" button to find the redirection .csv file we exported in Step 2 on your computer and select it.
+
+An option titled "Import to Group" will appear below the file selection button once you've selected your .csv file. Select "Redirections" from its dropdown menu. Then, click the blue "Upload" button to start the 301 redirect import process.
+
+**Warning: Once you click the Upload button, the 301 redirects will be published to your website and the changes will take effect almost immediately.**
+
+The import process should finish almost immediately, and when the page reloads it will tell you how many 301 redirects were imported from the .csv file. You'll also see the detailed list of the redirects you added, allowing you to edit or delete them if need be.
+
+### And that's it! You are now passing your SEO ranking from your old pages to your new pages.
+
+**A few notes:**
+
+-   Remember, every link you enter into this plugin MUST be a relative link! (You should really be using relative links all the time anyway, but that's a post for another day.)
+-   Don't forget to activate the plugin! You'd be surprised how easy it is to forget to click that Activate button after installing a plugin.
+-   Your server configuration might not be compatible with this plugin. Please refer to the plugin's support page here for help with errors and/or bugs. [wordpress.org/support/plugin/redirection](https://wordpress.org/support/plugin/redirection)
+-   You can't 301 redirect from one domain to another, i.e. myolddomain.com to mynewdomain.com
+-   Not every page on your old website needs to be 301 redirected. Focus on the ones that are already producing for you in search results, and skip the ones that don't.
+
+<style jsx>{`
+table {
+  margin: 0 auto 30px;
+}
+table td,
+table th {
+  padding: 10px 20px;
+}
+table th {
+  font-weight: normal;
+  font-size: 12px;
+  color: #9b9b9b;
+  padding-bottom: 0px;
+}
+table td:first-child {
+  width: 55%;
+}
+table td {
+  font-size: 14px;
+  vertical-align: middle;
+}
+table td:last-child {
+  color: #067df7;
+}
+table td:not(:first-child) {
+  text-align: center;
+}
+table td em {
+  font-weight: normal;
+  font-size: 10px;
+  text-transform: uppercase;
+  font-style: normal;
+  display: block;
+}
+// CSS only media query for mobile
+@media screen and (max-width: 640px) {
+  table td,
+  table th {
+    padding: 10px 10px;
+  }
+}
+`}</style>

@@ -1,0 +1,107 @@
+import withPost from "../../components/blog/with-post";
+
+export const meta = {
+  title: "Why I always say fuck no to spec work.",
+  description:
+    "After 26 canary releases and 3.4 million downloads, we are proud to introduce the production-ready Next.js 7",
+  date: "2018-12-11T16:07:55.907Z",
+	url: "https://nextjs.org/blog/say-no-to-spec",
+	headerImage: "/static/da-band.jpg",
+  link: "/blog/say-no-to-spec",
+  type: "Opinion",
+  authors: [
+    {
+      name: "Jeremy Smith",
+      avatar: "/static/da-band.jpg",
+      twitter: "jeremy_made_it"
+    }
+  ]
+};
+
+export default withPost({ ...meta });
+
+This is a topic that tends to wiggle under my skin. Not a week goes by without an
+email arriving in my inbox promising exposure, future business, or even worse,
+a promise to eventually pay for my services (if the project turns a profit) in
+lieu of paying anything up front. This is called [speculative work](http://www.nospec.com/),
+or "spec work" for short. Not only does this tactic not work with me, it's infuriating and is
+a perpetual annoyance for creatives in every industry. I can honestly say that in my ten years
+of working in the digital medium, I've never agreed to do spec work for a prospective client.
+Here are a few reasons why.
+
+#### Spec work is rarely worth the time investment
+
+We've all heard [a few horror stories](https://forums.adobe.com/thread/2196718) about a friend or colleague wasting dozens of hours on spec work, time that could have been better spent on paying clients or [learning a new skill](http://lifehacker.com/learn-anything-in-20-hours-with-this-four-step-method-509281792). If you're tempted by the offer made to you, think of what you can accomplish if you're not wasting your effort on what amounts to free work. Spec work is a time suck and will adversely affect your productivity (and profitability) in the long run. If you value your time, spec work should be avoided at all costs.
+
+> It’s obvious why spec work is bad for agencies. It’s expensive. It’s time-consuming. It’s stressful. And, let’s face it – it’s essentially an institutionalized way of getting us to work for free.
+**– Zak Mroueh, Zulu Alpha Kilo**
+
+#### You probably won't get paid on time... or at all
+
+Maybe the person offering you the "chance of a lifetime" really does mean well and will pay you for your work when the project is completed. Sure, you can set a payment schedule based on reaching regular project milestones or even negotiate a profit-share of the project, but if a prospective client is already gripping their wallet tighter than the armrest of a plane in a nosedive, getting paid for your work is likely going to be a process... [If you even get paid](http://fortune.com/2013/03/29/a-freelance-dilemma-how-to-get-paid-not-played/) in the end! It's already tough enough ensuring payment agreements are adhered to by your existing clients. Adding another unpaid invoice to the pile is not going to help you in the end. That is unless you're a debt collector.
+
+#### The creative community is actively taking a stand against spec work
+
+From photographers and filmmakers to freelancers and digital agencies, much of the creative community is up in arms over the rise of spec work requests. At its worst, asking for spec work is offensive and routinely seen as an affront to the creative community as a whole. A Toronto-based agency, [Zulu Alpha Kilo](http://www.zulualphakilo.com/saynotospec/), made a demonstrative video about spec work a few years ago that has been shared millions of times. The reactions of these business owners when asked if they would work for free are priceless.
+
+Suffice it to say, the people in the video above were not exactly chomping at the bit to give their services away for free. The diner owner was so incensed, he asked Zulu Alpha Kilo's film crew to leave. Does that sound like the beginning of a [strong client relationship](https://www.entrepreneur.com/article/234773)to you? Didn't think so.
+
+When you are first starting out in your field, it can be tempting to accept spec work on the off chance it will eventually lead to paying work. While it can be a scary thought to turn down potential clients, in the long run sticking to your guns and getting paid for your work every time is worth the small short-term risk. Accepting spec work is a slippery slope, and the best defense the creative community can enact is a blanket denial of all requested spec work.
+
+```js
+// components/my-dynamic-component.js
+import './my-dynamic-component.css'
+export default () => <h1>My dynamic component</h1>
+```
+
+```js
+// pages/index.js
+import dynamic from 'next/dynamic'
+const MyDynamicComponent = dynamic(import('../components/my-dynamic-component'))
+export default () => <div>
+  <MyDynamicComponent/>
+</div>
+```
+
+<style jsx>{`
+  table {
+    margin: 0 auto 30px;
+  }
+  table td,
+  table th {
+    padding: 10px 20px;
+  }
+  table th {
+    font-weight: normal;
+    font-size: 12px;
+    color: #9b9b9b;
+    padding-bottom: 0px;
+  }
+  table td:first-child {
+    width: 55%;
+  }
+  table td {
+    font-size: 14px;
+    vertical-align: middle;
+  }
+  table td:last-child {
+    color: #067df7;
+  }
+  table td:not(:first-child) {
+    text-align: center;
+  }
+  table td em {
+    font-weight: normal;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-style: normal;
+    display: block;
+  }
+  // CSS only media query for mobile
+  @media screen and (max-width: 640px) {
+    table td,
+    table th {
+      padding: 10px 10px;
+    }
+  }
+`}</style>
