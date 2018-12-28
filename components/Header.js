@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import ActiveLink from './ActiveLink';
 
-export default class Header extends PureComponent {
+export default class ClientList extends PureComponent {
   constructor() {
     super();
 
@@ -20,13 +20,6 @@ export default class Header extends PureComponent {
     });
   }
 
-  hideNav() {
-    const menu = this.menu();
-    this.setState({
-      navShown: !menu.false,
-    });
-  }
-
   menu() {
     return this.state;
   }
@@ -41,9 +34,7 @@ export default class Header extends PureComponent {
               className="logo"
               onFocus={this.toggleNav}
               role="presentation"
-              onMouseEnter={this.toggleNav}
-              onMouseLeave={this.toggleNav}
-              onClick={this.hideNav}
+              onClick={this.toggleNav}
             >
               Jeremy Smith{' '}
               <span className="not-my-name">

@@ -3,6 +3,9 @@ import Layout from '../components/Layout';
 import Container from '../components/Container';
 // import HoverBackground from '../components/HoverBackground';
 import Clients from '../components/work/clients';
+import clientManifest from '../client-manifest';
+
+import PortfolioImages from '../components/work/portfolio-images';
 
 const Work = () => (
   <Layout>
@@ -31,7 +34,9 @@ const Work = () => (
           </p>
         </div>
       </div>
-      <div className="panel-right" />
+      <div className="panel-right">
+        <PortfolioImages items={clientManifest} />
+      </div>
 
       <div className="scrolling">
         <span className="vertical-text">
@@ -44,7 +49,7 @@ const Work = () => (
       </div>
     </Container>
 
-    <style jsx>
+    <style jsx global>
       {`
         .test {
           height: 9000px;
@@ -95,19 +100,38 @@ const Work = () => (
           display: flex;
           flex-direction: column;
           place-items: center;
-          height: 100%;
           min-height: 100vh;
           overflow: scroll;
           position: relative;
+          -ms-overflow-style: -ms-autohiding-scrollbar;
+          overflow: -moz-scrollbars-none;
+        }
+
+        .panel-left::-webkit-scrollbar,
+        .panel-right::-webkit-scrollbar {
+          width: 0px; /* remove scrollbar space */
+          background: transparent; /* optional: just make scrollbar invisible */
         }
 
         .panel-right {
           grid-column: 2 / 3;
           grid-row: 1 / 3;
           border-left: 1px solid #fff;
+          padding: 0 2rem;
           margin-right: 2rem;
           background: var(--x-background);
-          height: 100vh;
+          min-height: 100vh;
+          overflow: scroll;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          -ms-overflow-style: -ms-autohiding-scrollbar;
+          overflow: -moz-scrollbars-none;
+          scroll-snap-type: y mandatory;
+        }
+
+        .panel-right figure {
+          scroll-snap-align: center;
         }
 
         .panel-bottom {

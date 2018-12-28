@@ -4,7 +4,7 @@ const clientManifest = {
       name: 'Disney MG',
       url: 'https://reactjs.org',
       description: 'A JavaScript library for building user interfaces',
-      img: 'static/jslogo@4x.png',
+      img: 'static/blue-planet-branding.jpg',
       tech: 'React',
     },
     {
