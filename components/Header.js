@@ -103,7 +103,7 @@ export default class Header extends PureComponent {
               display: block;
               position: relative;
               z-index: 100;
-              width: 25rem;
+              width: 22rem;
               font-weight: bold;
               font-style: normal;
               font-family: var(--monospace);

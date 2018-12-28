@@ -6,17 +6,33 @@ import Clients from '../components/work/clients';
 
 const Work = () => (
   <Layout>
-    <Container grid minHeight>
+    <Container grid minHeight maxHeight overflow>
       <div className="panel-left">
         <Clients />
+        <div className="panel-bottom">
+          <h4>Hello.</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quae
+            dolore repudiandae perferendis! Incidunt ad aliquam officiis velit
+            doloremque vero qui nesciunt? Totam, dignissimos officia veniam
+            accusamus voluptatibus quia eaque.
+          </p>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            dignissimos sunt perferendis nesciunt corrupti dolor, sed voluptate
+            quo nam. Voluptate, expedita! Nihil animi qui nisi cum, voluptas
+            ipsa accusantium officia.
+          </p>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
+            possimus porro unde natus placeat eos inventore consequatur nemo
+            omnis numquam, explicabo facilis laudantium molestiae perferendis
+            asperiores hic, ducimus eligendi quas!
+          </p>
+        </div>
       </div>
-      <nav className="panel-right">
-        <ul>
-          <li>Home</li>
-          <li>Test</li>
-          <li>Help</li>
-        </ul>
-      </nav>
+      <div className="panel-right" />
+
       <div className="scrolling">
         <span className="vertical-text">
           <q>
@@ -61,6 +77,8 @@ const Work = () => (
           position: absolute;
           right: 0;
           backface-visibility: hidden;
+          background: var(--background-dark);
+          z-index: 10;
         }
 
         @keyframes infinite-scroll {
@@ -74,15 +92,33 @@ const Work = () => (
 
         .panel-left {
           grid-column: 1 / 2;
-          padding: 2rem 4rem;
           display: flex;
+          flex-direction: column;
           place-items: center;
+          height: 100%;
+          min-height: 100vh;
+          overflow: scroll;
+          position: relative;
         }
 
         .panel-right {
           grid-column: 2 / 3;
           grid-row: 1 / 3;
           border-left: 1px solid #fff;
+          margin-right: 2rem;
+          background: var(--x-background);
+          height: 100vh;
+        }
+
+        .panel-bottom {
+          border-top: 1px solid #fff;
+          padding: 2rem;
+          top: 8rem;
+          display: flex;
+          flex-direction: column;
+          position: sticky;
+          min-height: calc(100% - 8rem);
+          background: var(--background-dark);
         }
 
         .hover-background-wrapper {

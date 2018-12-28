@@ -10,8 +10,13 @@ const Clients = () => (
       {`
         article {
           display: flex;
-          place-content: flex-end;
+          place-content: center;
+          place-items: center;
           width: 100%;
+          min-height: calc(100vh - 3rem);
+          position: sticky;
+          top: 0;
+          padding: 6rem 4rem;
         }
         .clientListWrapper {
           display: flex;

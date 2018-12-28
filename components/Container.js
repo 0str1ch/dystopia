@@ -1,4 +1,13 @@
-export default ({ grid, padding, small, minHeight, children, ...props }) => (
+export default ({
+  grid,
+  padding,
+  small,
+  minHeight,
+  maxHeight,
+  overflow,
+  children,
+  ...props
+}) => (
   <section className="grid-container" {...props}>
     <style jsx>
       {`
@@ -7,10 +16,12 @@ export default ({ grid, padding, small, minHeight, children, ...props }) => (
           margin: 0 auto;
           padding: ${padding ? '1rem' : ''};
           display: grid;
-          grid-template-rows: auto 5rem;
+          grid-template-rows: 1fr;
           ${grid ? 'grid-template-columns: 1fr 1fr;' : 'grid: auto;'}
           ${minHeight ? 'min-height: 100vh;' : ''}
+          ${maxHeight ? 'max-height: 100vh;' : ''}
           ${small ? 'max-width: 700px;' : ''}
+          ${overflow ? 'overflow: hidden;' : ''}
         }
 
 

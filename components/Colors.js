@@ -34,6 +34,22 @@ export default () => (
         /** Use for the outline effect on large text */
         --text-outline: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
           1px 1px 0 #fff;
+        --x-background: linear-gradient(
+            to top left,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) calc(50% - 0.8px),
+            rgb(255, 255, 255) 50%,
+            rgba(0, 0, 0, 0) calc(50% + 0.8px),
+            rgba(0, 0, 0, 0) 100%
+          ),
+          linear-gradient(
+            to top right,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0) calc(50% - 0.8px),
+            rgb(255, 255, 255) 50%,
+            rgba(0, 0, 0, 0) calc(50% + 0.8px),
+            rgba(0, 0, 0, 0) 100%
+          );
       }
     `}
   </style>
