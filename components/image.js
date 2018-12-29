@@ -119,6 +119,8 @@ class Image extends Component {
                   margin-${float}: -150px;
                 }
               }
+
+
             `}
           </style>
         </figure>

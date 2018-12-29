@@ -79,8 +79,7 @@ const Work = () => (
           display: flex;
           flex-direction: column;
           place-items: center;
-          min-height: 102vh;
-          overflow: scroll;
+          place-content: center;
           position: relative;
           -ms-overflow-style: -ms-autohiding-scrollbar;
           overflow: -moz-scrollbars-none;
@@ -100,14 +99,49 @@ const Work = () => (
           margin-right: 2rem;
           /*background: var(--x-background);
           background-attachment: fixed;*/
-          min-height: 100vh;
+          min-height: 102vh;
           overflow: scroll;
           position: relative;
           display: flex;
           flex-direction: column;
+          place-items: flex-end;
           -ms-overflow-style: -ms-autohiding-scrollbar;
           overflow: -moz-scrollbars-none;
           scroll-snap-type: y proximity;
+        }
+
+        .panel-right figure:first-of-type {
+          padding-top: 10vh;
+        }
+
+        .panel-right figure:last-of-type {
+          padding-bottom: 10vh;
+        }
+
+        .panel-right figure {
+          padding-top: 0;
+        }
+
+        .panel-right:before {
+          content: '';
+          position: fixed;
+          display: block;
+          height: 100%;
+          width: calc(50% - 2rem);
+          /* margin-right: 2rem; */
+          top: 0;
+          right: 2rem;
+          overflow: hidden;
+          background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 1) 0%,
+            rgba(0, 0, 0, 1) 5%,
+            rgba(0, 0, 0, 0) 9%,
+            rgba(0, 0, 0, 0) 100%
+          );
+          background-size: 100% 165%;
+          background-position: top;
+          z-index: 100;
         }
 
         .panel-right figure {

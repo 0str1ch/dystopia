@@ -8,7 +8,7 @@ const ActiveLink = ({ children, router, href }) => (
       <style jsx>
         {`
           a {
-            font-size: var(--text-small);
+            font-family: var(--monospace);
             text-decoration: none;
             color: var(--primary-text);
             z-index: 1000;
@@ -16,9 +16,8 @@ const ActiveLink = ({ children, router, href }) => (
 
           .nav-button {
             text-align: left;
-            font-size: var(--h4-small);
             line-height: normal;
-            font-weight: 900;
+            font-weight: normal;
             padding: 0.2em 0.8em;
             cursor: pointer;
             position: relative;

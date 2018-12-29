@@ -42,6 +42,11 @@ export default class ClientList extends PureComponent {
               </span>
             </a>
           </Link>
+          <nav>
+            <ActiveLink href="/info">Info</ActiveLink>
+            <ActiveLink href="/work">Work</ActiveLink>
+            <ActiveLink href="/blog">Blog</ActiveLink>
+          </nav>
         </header>
 
         <nav className="header__mobile-nav container">
@@ -57,11 +62,18 @@ export default class ClientList extends PureComponent {
               top: 0;
               background-color: transparent;
               width: 100%;
-              padding: 2rem;
+              padding: 1.5rem;
+              margin-right: 2rem;
+              height: 6rem;
               display: flex;
+              flex-direction: row;
               justify-content: space-between;
-              align-items: center;
-              z-index: 10;
+              place-items: baseline;
+              z-index: 150;
+            }
+
+            nav {
+              z-index: 150;
             }
 
             .desktop-nav {

@@ -7,9 +7,8 @@ const PortfolioImages = props => (
         lazy
         src={item.img}
         key={item.name}
-        oversize
-        width={1830 / 3}
-        height={1830 / 3}
+        width={1840 / 3}
+        height={1840 / 3}
         caption={item.description}
       />
     ))}
