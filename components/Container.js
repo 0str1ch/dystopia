@@ -46,6 +46,8 @@ export default ({
         @media screen and (max-width: 640px) {
           section {
             padding: 0;
+            ${minHeight ? 'min-height: 100%;' : ''}
+          ${maxHeight ? 'max-height: 100%;' : ''}
           }
         }
       `}

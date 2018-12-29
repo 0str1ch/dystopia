@@ -12,27 +12,6 @@ const Work = () => (
     <Container grid minHeight maxHeight overflow>
       <div className="panel-left">
         <Clients />
-        <div className="panel-bottom">
-          <h4>Hello.</h4>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere quae
-            dolore repudiandae perferendis! Incidunt ad aliquam officiis velit
-            doloremque vero qui nesciunt? Totam, dignissimos officia veniam
-            accusamus voluptatibus quia eaque.
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-            dignissimos sunt perferendis nesciunt corrupti dolor, sed voluptate
-            quo nam. Voluptate, expedita! Nihil animi qui nisi cum, voluptas
-            ipsa accusantium officia.
-          </p>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis
-            possimus porro unde natus placeat eos inventore consequatur nemo
-            omnis numquam, explicabo facilis laudantium molestiae perferendis
-            asperiores hic, ducimus eligendi quas!
-          </p>
-        </div>
       </div>
       <div className="panel-right">
         <PortfolioImages items={clientManifest} />
@@ -116,11 +95,11 @@ const Work = () => (
         .panel-right {
           grid-column: 2 / 3;
           grid-row: 1 / 3;
-          border-left: 1px solid #fff;
+          /*border-left: 1px solid #fff;*/
           padding: 0 2rem;
           margin-right: 2rem;
-          background: var(--x-background);
-          background-attachment: fixed;
+          /*background: var(--x-background);
+          background-attachment: fixed;*/
           min-height: 100vh;
           overflow: scroll;
           position: relative;
@@ -136,7 +115,7 @@ const Work = () => (
         }
 
         .panel-bottom {
-          border-top: 1px solid #fff;
+          /*border-top: 1px solid #fff;*/
           padding: 2rem;
           top: 8rem;
           display: flex;

@@ -50,7 +50,7 @@ class Image extends Component {
       <IObserver
         once
         onIntersect={this.handleIntersect}
-        rootMargin="20%"
+        rootMargin="30%"
         disabled={!lazy}
       >
         <figure
