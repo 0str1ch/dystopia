@@ -102,9 +102,9 @@ class Image extends Component {
                 width: 100%;
               }
               p {
-                color: var(--hint-light);
+                color: var(--primary-text);
                 font-size: var(--text-small);
-                margin-top: 1rem;
+                margin-top: 0.4rem;
                 text-align: center;
               }
               @media (min-width: 1200px) {

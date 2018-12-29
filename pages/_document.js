@@ -29,6 +29,7 @@ export default class MyDocument extends Document {
             content="black-translucent"
           />
           <meta name="msapplication-starturl" content="/" />
+          <link rel="manifest" href="static/manifest.json" />
         </Head>
         <body>
           <Main />

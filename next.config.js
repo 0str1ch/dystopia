@@ -53,6 +53,7 @@ module.exports = withPlugins(
         },
       },
     ],
+    withOffline,
     [
       optimizedImages,
       {
@@ -60,7 +61,7 @@ module.exports = withPlugins(
       },
     ],
     [withMDX, {}],
-    withOffline,
+
     [withSass, { withPurgeCss }],
 
     // your other plugins here
