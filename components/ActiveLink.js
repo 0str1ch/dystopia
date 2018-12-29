@@ -24,10 +24,8 @@ const ActiveLink = ({ children, router, href }) => (
             place-content: center;
             place-self: flex-start;
             color: ${router.pathname === href
-              ? // eslint-disable-next-line indent
-                'var(--hue-primary)'
-              : // eslint-disable-next-line indent
-                'var(--hue-1)'};
+              ? 'var(--hue-primary)'
+              : 'var(--hue-1)'};
           }
 
           .nav-button:hover {
