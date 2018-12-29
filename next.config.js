@@ -1,3 +1,4 @@
+/* eslint-disable arrow-parens */
 /* eslint-disable no-param-reassign */
 /* eslint-disable no-useless-escape */
 /* eslint-disable import/no-extraneous-dependencies */
