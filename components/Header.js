@@ -61,7 +61,7 @@ export default class ClientList extends PureComponent {
               position: absolute;
               top: 0;
               background-color: transparent;
-              width: 100%;
+              width: calc(100% - 2rem);
               padding: 1.5rem;
               margin-right: 2rem;
               height: 6rem;

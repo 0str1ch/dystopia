@@ -1,31 +1,17 @@
 import React from 'react';
 import Layout from '../components/Layout';
 import Container from '../components/Container';
-// import HoverBackground from '../components/HoverBackground';
 import Clients from '../components/work/clients';
-import clientManifest from '../client-manifest';
+import ScrollText from '../components/scroll-text';
 
-import PortfolioImages from '../components/work/portfolio-images';
-
-const Work = () => (
+const Home = () => (
   <Layout>
     <Container grid minHeight maxHeight overflow>
       <div className="panel-left">
         <Clients />
       </div>
-      <div className="panel-right">
-        <PortfolioImages items={clientManifest} />
-      </div>
 
-      <div className="scrolling">
-        <span className="vertical-text">
-          <q>
-            Just because I do a lot of thinking doesn’t mean I don’t like
-            parties and getting into trouble.
-          </q>{' '}
-          – Stephen Hawking
-        </span>
-      </div>
+      <ScrollText />
     </Container>
 
     <style jsx global>
@@ -34,49 +20,10 @@ const Work = () => (
           height: 9000px;
         }
 
-        .vertical-text {
-          font-family: var(--monospace);
-          font-size: var(--text-small);
-          letter-spacing: 0.5em;
-          color: var(--primary-text);
-          writing-mode: vertical-lr;
-          text-orientation: upright;
-          text-transform: uppercase;
-          justify-self: center;
-          margin-top: 101.5vh;
-          display: inline;
-          animation: infinite-scroll 60s linear 0s infinite normal none running;
-          will-change: transform;
-        }
-
-        div.scrolling {
-          margin: 0;
-          height: 100%;
-          width: 2rem;
-          display: flex;
-          place-content: center;
-          white-space: nowrap;
-          overflow: hidden;
-          border-left: 1px solid #fff;
-          position: absolute;
-          right: 0;
-          backface-visibility: hidden;
-          background: var(--background-dark);
-          z-index: 10;
-        }
-
-        @keyframes infinite-scroll {
-          0% {
-            transform: translate(0, 0);
-          }
-          100% {
-            transform: translate(0, -200rem);
-          }
-        }
-
         .panel-left {
           grid-column: 1 / 2;
           display: flex;
+          height: 100%;
           flex-direction: column;
           place-items: center;
           place-content: center;
@@ -232,4 +179,4 @@ const Work = () => (
   </Layout>
 );
 
-export default Work;
+export default Home;

@@ -3,12 +3,15 @@ const ClientList = props => (
     <ul key="clientlist">
       {props.items.clients.map(item => (
         <li key={item.name}>
-          <a href={item.url} className="card-wrapper" key={item.name}>
+          <a href={item.url} key={item.name}>
             {item.name}
           </a>
 
           <style jsx>
             {`
+              li {
+                line-height: 1.7;
+              }
               a {
                 font-family: var(--monospace);
                 font-size: var(--h3-medium);
