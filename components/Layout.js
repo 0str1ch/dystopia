@@ -152,7 +152,7 @@ export default withPure(({ title, description, children }) => (
           --h4-small: 1.333em;
           --text-large: ;
           --text-normal: 1em;
-          --text-small: 0.85em;
+          --text-small: 0.7em;
           /** Font Family Variables**/
           --monospace: MaisonNeue-Mono, monospace;
         }

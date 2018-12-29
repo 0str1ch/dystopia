@@ -100,7 +100,7 @@ const Work = () => (
           display: flex;
           flex-direction: column;
           place-items: center;
-          min-height: 100vh;
+          min-height: 102vh;
           overflow: scroll;
           position: relative;
           -ms-overflow-style: -ms-autohiding-scrollbar;
@@ -120,6 +120,7 @@ const Work = () => (
           padding: 0 2rem;
           margin-right: 2rem;
           background: var(--x-background);
+          background-attachment: fixed;
           min-height: 100vh;
           overflow: scroll;
           position: relative;
@@ -127,7 +128,7 @@ const Work = () => (
           flex-direction: column;
           -ms-overflow-style: -ms-autohiding-scrollbar;
           overflow: -moz-scrollbars-none;
-          scroll-snap-type: y mandatory;
+          scroll-snap-type: y proximity;
         }
 
         .panel-right figure {
@@ -141,8 +142,13 @@ const Work = () => (
           display: flex;
           flex-direction: column;
           position: sticky;
-          min-height: calc(100% - 8rem);
+          min-height: calc(100vh - 8rem);
           background: var(--background-dark);
+          transition: transform var(--ease-in-cubic) 0.2s;
+        }
+
+        .panel-bottom:hover {
+          transform: translate3d(0, -1rem, 0);
         }
 
         .hover-background-wrapper {
