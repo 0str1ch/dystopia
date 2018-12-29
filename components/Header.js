@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-one-expression-per-line */
 import React, { PureComponent } from 'react';
 import Link from 'next/link';
 import ActiveLink from './ActiveLink';
