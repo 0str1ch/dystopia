@@ -12,18 +12,23 @@ export default ({
     <style jsx>
       {`
         section {
-          width: 100%;
-          margin: 0 auto;
-          padding: ${padding ? '1rem' : ''};
-          display: grid;
-          grid-template-rows: 1fr;
           ${grid ? 'grid-template-columns: 1fr 1fr;' : 'grid: auto;'}
           ${minHeight ? 'min-height: 100vh;' : ''}
           ${maxHeight ? 'max-height: 100vh;' : ''}
           ${small ? 'max-width: 700px;' : ''}
           ${overflow ? 'overflow: hidden;' : ''}
         }
-
+        `}
+    </style>
+    <style jsx>
+      {`
+        section {
+          width: 100%;
+          margin: 0 auto;
+          padding: ${padding ? '1rem' : ''};
+          display: grid;
+          grid-template-rows: 1fr;
+        }
 
         section ~ div {
           padding: 1rem;
