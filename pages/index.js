@@ -16,8 +16,17 @@ const Home = () => (
 
     <style jsx global>
       {`
-        .test {
-          height: 9000px;
+        .grid-container:before {
+          content: '',
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: auto;
+          background-image: url(static/blackhole.gif);
+    background-size: cover;
+    opacity: 0.2;
+}
         }
 
         .panel-left {

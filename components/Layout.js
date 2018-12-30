@@ -45,6 +45,19 @@ export default withPure(({ title, description, children }) => (
           overflow: visible;
         }
 
+        .screen-render::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url(static/blackhole.gif);
+          background-size: cover;
+          filter: blur(0.5rem);
+          opacity: 0.2;
+        }
+
         @keyframes fadeup {
           0% {
             transform: translateY(50px);
