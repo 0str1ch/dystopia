@@ -26,8 +26,8 @@ const nextConfig = {
     config.plugins.push(
       new webpack.ContextReplacementPlugin(
         /highlight\.js[\/\\]lib[\/\\]languages$/,
-        new RegExp(`^./(${['javascript', 'json', 'xml'].join('|')})$`)
-      )
+        new RegExp(`^./(${['javascript', 'json', 'xml'].join('|')})$`),
+      ),
     );
     return config;
   },
@@ -51,7 +51,7 @@ module.exports = withPlugins(
       {
         analyzeServer: ['server', 'both'].includes(process.env.BUNDLE_ANALYZE),
         analyzeBrowser: ['browser', 'both'].includes(
-          process.env.BUNDLE_ANALYZE
+          process.env.BUNDLE_ANALYZE,
         ),
         bundleAnalyzerConfig: {
           server: {
@@ -78,5 +78,5 @@ module.exports = withPlugins(
 
     // your other plugins here
   ],
-  nextConfig
+  nextConfig,
 );
