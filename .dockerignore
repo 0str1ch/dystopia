@@ -1,5 +1,6 @@
-*
-!src
-!pages
-!yarn.lock
-!package.json
+.git
+.results
+scripts
+*Dockerfile*
+node_modules
+package-lock.json
