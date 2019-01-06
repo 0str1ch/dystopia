@@ -21,7 +21,7 @@
   },
   "keywords": [],
   "author": "Jeremy Smith",
-  "license": "ISC",
+  "license": "MIT",
   "repository": "0str1ch/dystopia",
   "homepage": "https://github.com/0str1ch/dystopia",
   "dependencies": {
