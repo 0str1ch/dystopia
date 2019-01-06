@@ -9,13 +9,13 @@
     "analyze": "BUNDLE_ANALYZE=both next build",
     "lint": "eslint",
     "lint-staged": "lint-staged",
-    "prettier": "prettier **/*.js --write --single-quote --trailing-comma es5",
+    "prettier": "prettier **/*.js --write --single-quote --trailing-comma all",
     "eslint-check": "eslint --print-config ."
   },
   "pre-commit": "lint-staged",
   "lint-staged": {
     "*.js": [
-      "prettier --write --single-quote --trailing-comma es5",
+      "prettier --write --single-quote --trailing-comma all",
       "git add"
     ]
   },
