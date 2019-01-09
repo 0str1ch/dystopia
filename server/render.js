@@ -5,7 +5,10 @@ const wrap = require('await-wrap');
 const dev = process.env.NODE_ENV !== 'production';
 
 const ssrCache = new LRUCache({
-  max: 100,
+  length(n, key) {
+    return n.toString().length + key.toString().length;
+  },
+  max: 100 * 1000 * 1000, // 100MB cache soft limit
   maxAge: 1000 * 60 * 24, // 1 day
 });
 
