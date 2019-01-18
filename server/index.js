@@ -26,6 +26,11 @@ app.prepare().then(() => {
     });
   }
 
+  server.get('/_next/*', (req, res) => {
+    // console.log('in here next');
+    return handle(req, res);
+  });
+
   cachedRoutes.forEach(route => {
     server.get(route, (req, res) => Renderer(req, res, route));
   });
